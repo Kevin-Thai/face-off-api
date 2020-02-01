@@ -21,41 +21,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors())
 
-{/*Old database before SQL
-const database = {
-  users: [
-    {
-      id:'123',
-      name: 'John',
-      password: 'cookies',
-      email: 'john@email.com',
-      entries: 0,
-      joined: new Date()
-    },
-    {
-      id:'124',
-      name: 'Sally',
-      password: 'bananas',
-      email: 'sally@email.com',
-      entries: 0,
-      joined: new Date()
-    }
-  ],
-  // login: [
-  //   {
-  //     id: '987',
-  //     hash: '',
-  //     email:'john@gmail.com'
-  //   }
-  // ]
-}
-
-Code to test whether our connection to the database was working
-knex.select('*').from('users').then(data => {
-  console.log(data);
-});
-*/}
-
 app.get('/', (req, res) => { res.send(users) })
 app.post('/signin', signin.handleSignin(knex, bcrypt))
 app.post('/register', register.handleRegister(knex, bcrypt))
