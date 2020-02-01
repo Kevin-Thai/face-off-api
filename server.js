@@ -29,13 +29,5 @@ app.put('/image', (req, res) => {image.handleImage(req, res, knex)})
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 
 app.listen(3000, ()=> {
-  console.log('works')
+  console.log('Server running on port 3000')
 })
-
-{/*
-/                 --> res = this is working
-/signin           --> POST (posting data, JSON; user information)  = success/fail
-/register         --> POST (add data to the database or variable with new user info) = user
-/profile/:userID  --> GET (get user information) = user
-/image            --> PUT (updates user profile) = user or change to user
-*/}
